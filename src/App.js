@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import Header from './pages/Shared/Header/Header';
 import Home from './pages/HomePage/Home/Home';
+import Products from './pages/Others/Products/Products';
+import Book from './pages/Others/Book/Book';
+
 
 function App() {
   return (
@@ -24,6 +27,12 @@ function App() {
 
           <Route path='/about'>
             <Home></Home>
+          </Route> 
+          <Route path='/products'>
+            <Products></Products>
+          </Route> 
+          <Route path='/book/:productId'>
+            <Book></Book>
           </Route> 
            
         </Switch>  
