@@ -1,12 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { Link,} from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import logo from "../../../images/hfz-logo.png"
 import './Header.css';
 
 
 const Header = () => {
-    const {user, logOut} = useAuth()
+    const {user, logOut} = useAuth();
+    const history = useHistory()
+    const handleClick = () =>{
+        history.push('/login')
+    }
     return (
         <>
          <header>
@@ -25,7 +30,7 @@ const Header = () => {
                          {user.email?
                          <button onClick={logOut}>Logout</button>
                          :
-                         <button>Login</button>}
+                         <button onClick={handleClick}>Login</button>}
                      </div>
                  </div>
              </nav>
