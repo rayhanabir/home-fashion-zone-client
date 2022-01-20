@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import logo from "../../../images/hfz-logo.png"
 import './Header.css';
 
 
 const Header = () => {
+    const {user, logOut} = useAuth()
     return (
         <>
          <header>
@@ -20,7 +22,10 @@ const Header = () => {
                          <li><Link to='/blog'>Blog</Link></li>
                      </ul>
                      <div className="login-btn">
-                         <button>Login</button>
+                         {user.email?
+                         <button onClick={logOut}>Logout</button>
+                         :
+                         <button>Login</button>}
                      </div>
                  </div>
              </nav>
