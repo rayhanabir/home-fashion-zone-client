@@ -25,11 +25,12 @@ const Register = () => {
 
     const handleSignUp = e =>{
         e.preventDefault();
-        if(loginData.password1 !== loginData.password2){
+        if(loginData.password !== loginData.password2){
             alert('password did not match')
             return
         }
         registerUser(loginData.email, loginData.password, loginData.name, history)
+        console.log(loginData)
 
     }
 
@@ -53,7 +54,7 @@ const Register = () => {
                         <label htmlFor="">Email</label>
                     </div>
                     <div className="input-field">
-                        <input type="password" name="password1" onBlur={handleOnBlur} placeholder='Password'/>
+                        <input type="password" name="password" onBlur={handleOnBlur} placeholder='Password'/>
                         <label htmlFor="">Password</label>
                     </div>
                     <div className="input-field">
@@ -64,7 +65,7 @@ const Register = () => {
                   </form>
                     <p className='text-center'>Already have an Account ? <Link to='/login'>Login</Link></p>
 
-                    <div className='text-center mb-2'>------OR-------</div>
+                    <div className='text-center mb-2'>_____OR_____</div>
                     <button className='google-btn' onClick={handleGoolgeSignIn}>sign in using google</button>
               </div>}
                 
