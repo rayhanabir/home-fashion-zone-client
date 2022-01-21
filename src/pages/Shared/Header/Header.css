@@ -8,20 +8,20 @@
 .logo img{
     width: 110px;
 }
-ul{
+.nav-container ul{
     display: flex;
     align-items: center;   
 }
-ul li {
+.nav-container ul li {
     margin-right: 9px;
     padding: 7px;
 }
-ul li a{
+.nav-container ul li a{
     text-decoration: none;
     font-size: 1.1em;
     color: black;
 }
-ul li :hover{
+.nav-container ul li :hover{
     color: brown;
     transition: ease(0.2s);
     

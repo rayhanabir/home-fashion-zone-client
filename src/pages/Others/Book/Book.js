@@ -42,7 +42,7 @@ const Book = () => {
                 price:totalPrice,
                 quantity:productCount
             }
-            console.log(order)
+            
             fetch('http://localhost:5000/orders', {
                 method:'POST',
                 headers:{
@@ -54,8 +54,9 @@ const Book = () => {
             .then(data => {
                 if(data.insertedId){
                     setOrderSuccess(true)
+                    
                 }
-                console.log(data)
+               
             })
 
     }
@@ -66,7 +67,7 @@ const Book = () => {
 
                 <div className="single-product-container">
                     <div className="product-content">
-                        <div className="product-card text-center p-3">
+                        <div className="single-product-card text-center p-3">
                             <div className="prodict-image">
                                 <img src={image} alt="" />
                             </div>

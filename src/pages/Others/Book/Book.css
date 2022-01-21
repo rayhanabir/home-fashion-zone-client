@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-.product-card{
+.single-product-card{
     border-right: 2px solid gray;
 }
 .plus-button , .minus-button{
