@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
@@ -9,11 +8,15 @@ import useAuth from '../../../hooks/useAuth';
 import './Book.css';
 
 const Book = () => {
+    const {user} = useAuth()
+    const initialCustomerInfo ={
+        name:user.displayName,
+        email:user.email
+    };
     const [singleProduct, setSingleProduct] = useState({});
-    const [customerData, setCustomerData] = useState({})
+    const [customerData, setCustomerData] = useState(initialCustomerInfo)
     const [productCount, setProductCount] = useState(1)
     const [orderSuccess, setOrderSuccess] = useState(false)
-    const {user} = useAuth()
     const {productId} = useParams();
     
     useEffect(()=>{
@@ -84,8 +87,8 @@ const Book = () => {
                         <div className="booking-input-area p-4">
                             <div className="booking-input-field">
                                 <form onSubmit={handleOrderSubmit}>
-                                    <input type="text" name='name' onBlur={handleOnblur} placeholder='Your Name'/>
-                                    <input type="email" name='email' onBlur={handleOnblur} placeholder='Your Email' />
+                                    <input type="text" name='name' onBlur={handleOnblur} defaultValue={user.displayName} placeholder='Your Name'/>
+                                    <input type="email" name='email' onBlur={handleOnblur} defaultValue={user.email} placeholder='Your Email' />
                                     <input type="text" name='address' onBlur={handleOnblur} placeholder='Your Address'/>
                                     <input type="number" name='phone' onBlur={handleOnblur} placeholder='Your Phone'/>
                                     <input type="submit" value="Place Order" />

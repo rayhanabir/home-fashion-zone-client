@@ -1,5 +1,4 @@
-import React from "react";
-import camera from '../../../images/camera4.jpg';
+import React,{useEffect, useState} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./ReviewSlide.css";
 import "swiper/css";
@@ -9,25 +8,31 @@ import SwiperCore, { Pagination } from "swiper";
 SwiperCore.use([Pagination]);
 
 const ReviewSlide = () => {
+  const[reviews, setReviews] = useState([])
+  useEffect(()=>{
+    fetch('http://localhost:5000/reviews')
+    .then(res => res.json())
+    .then(data => setReviews(data))
+  },[])
+
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        slidesPerView={3}
         spaceBetween={30}
         pagination={{
           clickable: true,
         }}
         className="mySwiper"
       >
-        <SwiperSlide><div>
-                <h3>Bangladesh</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui blanditiis sit doloribus sapiente, eligendi iure voluptatum illo ab atque alias in velit voluptatibus vel quidem ducimus voluptatem! Repudiandae, ex facilis.</p>
-            </div></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide></SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
+        {
+          reviews.map(review =><SwiperSlide key={review._id}>
+            <div className='p-3'>
+              <p>{review.customerReview}</p>
+              <h4>{review.customerName}</h4>
+            </div>
+          </SwiperSlide> )
+        }
         
       </Swiper>
     </>
