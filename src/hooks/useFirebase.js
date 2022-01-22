@@ -6,6 +6,7 @@ initializeAuthentication();
 
 const useFirebase = () =>{
     const [user, setUser] = useState({});
+    const [admin, setAdmin] = useState(false)
     const [authError, setAuthError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
 
@@ -21,9 +22,10 @@ const useFirebase = () =>{
             setAuthError('')
             const newUser = {email, displayName:name}
             setUser(newUser)
+            //save user to db
+            saveUser(email, name, 'POST')
 
             //send name to firebase
-
             updateProfile(auth.currentUser, {
               displayName:name
             }).then(() => {
@@ -65,6 +67,8 @@ const useFirebase = () =>{
               const user = result.user;
               setUser(user)
               setAuthError('')
+              //save user to db
+              saveUser(user.email, user.displayName, 'PUT')
               const destination = location?.state?.from || '/'
               history.push(destination);
             }).catch((error) => {
@@ -86,6 +90,13 @@ const useFirebase = () =>{
               .finally(()=>setIsLoading(false));
         }
 
+        //check email to user admin or not
+        useEffect(()=>{
+          fetch(`http://localhost:5000/users/${user.email}`)
+          .then(res => res.json())
+          .then(data => setAdmin(data.admin))
+        },[user.email])
+
         //observer
 
     useEffect(()=>{
@@ -101,6 +112,18 @@ const useFirebase = () =>{
            return ()=>unsubscribed;
      },[]);
 
+     const saveUser = (email, displayName, method) =>{
+        const user = {email, displayName}
+        fetch('http://localhost:5000/users', {
+          method:method,
+          headers:{
+            "Content-type": "application/json"
+          },
+          body:JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+     }
 
 
 
@@ -108,6 +131,7 @@ const useFirebase = () =>{
         user,
         registerUser,
         isLoading,
+        admin,
         logOut,
         authError,
         logInUser,

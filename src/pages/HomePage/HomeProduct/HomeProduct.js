@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from 'react-router-dom';
 
 const HomeProduct = (props) => {
@@ -14,7 +16,7 @@ const HomeProduct = (props) => {
                 <h4>{name}</h4>
                 <h3 className='text-danger'>${price}</h3>
                 <p>{description}</p>
-                <button onClick={()=>handleClick(_id)} className='buy-btn'>Buy Now</button>
+                <button onClick={()=>handleClick(_id)} className='buy-btn'><FontAwesomeIcon icon={faShoppingCart} /> Buy Now</button>
            </div>
         </div>
     );

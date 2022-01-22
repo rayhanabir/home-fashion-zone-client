@@ -1,0 +1,11 @@
+.make-admin-input input{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding:7px;
+}
+.make-admin-input input[type="submit"]{
+    background-color: lightseagreen;
+    margin-top: 10px;
+    width: 25%;
+}
