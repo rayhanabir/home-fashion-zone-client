@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
+import AdminRoute from "../../Login/AdminRoute/AdminRoute";
 import AddProduct from "../AddProduct/AddProduct";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageOrder from "../ManageOrder/ManageOrder";
@@ -18,21 +19,21 @@ const DashboardHome = () => {
         <Route path={`${path}/myOrder`}>
           <MyOrder></MyOrder>
         </Route>
-        <Route path={`${path}/manageOrder`}>
+        <AdminRoute path={`${path}/manageOrder`}>
           <ManageOrder></ManageOrder>
-        </Route>
+        </AdminRoute>
         <Route path={`${path}/pay`}>
           <Payment></Payment>
         </Route>
-        <Route path={`${path}/makeAdmin`}>
+        <AdminRoute path={`${path}/makeAdmin`}>
           <MakeAdmin></MakeAdmin>
-        </Route>
-        <Route path={`${path}/manageProduct`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/manageProduct`}>
           <ManageProduct></ManageProduct>
-        </Route>
-        <Route path={`${path}/addProduct`}>
+        </AdminRoute>
+        <AdminRoute path={`${path}/addProduct`}>
           <AddProduct></AddProduct>
-        </Route>
+        </AdminRoute>
         <Route path={`${path}/review`}>
           <Review></Review>
         </Route>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Alert, Spinner } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -51,6 +52,9 @@ const Login = () => {
                     <button className='google-btn' onClick={handleGoolgeSignIn}>sign in using google</button>
               </div>
           </div>  
+                {isLoading && <Spinner className='d-block m-auto' animation="border" />}
+                {user?.email &&<Alert severity="success" style={{width:"50%", display:"block", margin:"auto"}}>User Login Succesfully</Alert>}
+                {authError && <Alert style={{width:"50%", display:"block", margin:"auto"}} severity="error">{authError}</Alert>}
         </>
     );
 };

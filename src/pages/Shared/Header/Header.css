@@ -5,8 +5,10 @@
     align-items: center;
     justify-content: space-around;
 }
-.logo img{
-    width: 110px;
+.logo {
+    
+    font-weight: 600;
+    font-size: 1.em;
 }
 .nav-container ul{
     display: flex;

@@ -18,7 +18,7 @@ const Header = () => {
              <nav>
                  <div className="nav-container">
                      <div className="logo">
-                        <img src={logo} alt="" />
+                        BEST CAMERA
                      </div>
                      <ul>
                          <li><Link to='/home'>Home</Link></li>

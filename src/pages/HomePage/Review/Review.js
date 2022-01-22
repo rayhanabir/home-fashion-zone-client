@@ -9,7 +9,7 @@ const Review = () => {
         <>
             <section className='mt-5 review-section'>
                 <div className="review-area">
-                    <h2 className='text-center '>What Our <span className='text-danger fw-bold'>Client</span> Says</h2>
+                    <h2 className='text-center my-5'>What Our <span className='text-danger fw-bold'>Client</span> Says</h2>
                     <div className="review-card">
                         <Container>
                             <ReviewSlide></ReviewSlide>
