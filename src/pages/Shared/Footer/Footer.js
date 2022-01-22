@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fab, faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import {} from '@fortawesome/free-solid-svg-icons'
 import './Footer.css';
 
@@ -11,7 +12,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-content-box">
                     <div className="box-0 box">
-                        <span>location</span>
+                        <span className='text-white'><FontAwesomeIcon icon={faMapMarkerAlt} /></span>
                         <address>House-1952, Road-09, Baridhara DOHS, Dhaka , Bangladesh</address>
                     </div>
                     <div className="box-1 box">

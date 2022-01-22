@@ -1,0 +1,24 @@
+.add-product-input-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.add-product-input-box{
+    width: 500px;
+    background:darkgrey;
+    padding: 10px;
+    border-radius: 5px;
+}
+.add-product-input-box input, textarea{
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 4px;
+    
+}
+.add-product-input-box input[type="submit"]{
+    width: 50%;
+}
+
+    
