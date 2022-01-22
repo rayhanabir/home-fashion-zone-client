@@ -1,0 +1,29 @@
+
+.footer-area{
+    background-color:#EE5F79;
+}
+.footer-content{
+    padding: 30px;
+}
+.footer-content-box{ 
+    display: flex;
+    justify-content: space-between;
+}
+.box{
+    width: 300px;
+    
+}
+
+
+.box-1 ul{
+    padding: 0;
+    
+}.box-2 ul{
+    padding: 0;
+    
+}
+.social-links span{
+    color: white;
+    font-size: 1.4em;
+    margin-left: 10px;
+}
