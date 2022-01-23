@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAYDvT7Uw2Tr4TGuxCIyww-yCOCbQGFV3k",
-    authDomain: "bestcamera-7401a.firebaseapp.com",
-    projectId: "bestcamera-7401a",
-    storageBucket: "bestcamera-7401a.appspot.com",
-    messagingSenderId: "889641646931",
-    appId: "1:889641646931:web:2a4219aa9864696292bfa6"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
   };
   export default firebaseConfig;
