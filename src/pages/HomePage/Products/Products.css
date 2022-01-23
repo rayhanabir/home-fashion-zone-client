@@ -11,4 +11,18 @@
     color: white;
     border: none;
     border-radius: 5px;
-}   
+}  
+
+/* 
+ media query start here
+*/
+
+@media screen and (max-width:768px) {
+    .six-products{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+}

@@ -2,11 +2,12 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import Sidebar from '../Sidebar/Sidebar';
-
+import './Dashboard.css';
 const Dashboard = () => {
     return (
         <>
-           <Row>
+        <section >
+            <Row className='dashboard-container'>
                 <Col md={3}>
                     <Sidebar></Sidebar>
                 </Col>
@@ -14,6 +15,8 @@ const Dashboard = () => {
                     <DashboardHome></DashboardHome>
                 </Col>
             </Row> 
+        </section>
+           
         </>
     );
 };

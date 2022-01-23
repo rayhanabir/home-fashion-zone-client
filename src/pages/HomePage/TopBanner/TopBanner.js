@@ -13,7 +13,7 @@ const TopBanner = () => {
                             <div className="top-banner-com">
                                 <h2>BETTER STYLISH COLLECTION <br />
                                 FOR EVERY PERSON</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quidem doloribus repudiandae consequuntur reiciendis, similique ex eaque voluptatem eligendi voluptatibus.</p>
+                                <p>Hey ! we are selling all kind of camera. you can buy your best gadget item of us.we ensure quality products in mid price range. </p>
                                 <button className='banner-btn'>Know More</button>
                             </div>
                         </Col>

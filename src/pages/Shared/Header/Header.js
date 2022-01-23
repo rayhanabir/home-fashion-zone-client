@@ -23,7 +23,8 @@ const Header = () => {
                      <ul>
                          <li><Link to='/home'>Home</Link></li>
                          <li><Link to='/products'>Products</Link></li>
-                         <li><Link to='/dashboard'>Dashboard</Link></li>
+                         <li><Link to='/about'>About Us</Link></li>
+                         {user.email && <li><Link to='/dashboard'>Dashboard</Link></li>}
                      </ul>
                      <div className="login-btn">
                          {user.email?

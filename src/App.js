@@ -9,6 +9,9 @@ import Register from "./pages/Login/Register/Register";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 import Dashboard from "./pages/DashboardPage/Dashboard/Dashboard";
+import NotFound from "./pages/Others/NotFound/NotFound";
+import About from "./pages/Others/About/About";
+
 
 function App() {
   return (
@@ -42,6 +45,12 @@ function App() {
             </Route>
             <Route path="/dashboard">
               <Dashboard></Dashboard>
+            </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>
