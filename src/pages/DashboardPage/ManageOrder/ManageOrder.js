@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Table } from "react-bootstrap";
 import "./ManageOrder.css";
+import swal from "sweetalert";
+
 const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
   useEffect(() => {
@@ -12,25 +14,42 @@ const ManageOrder = () => {
   }, []);
 
   const handleDelete = (id) => {
-    const procced = window.confirm(
-      "Are You Sure You want to delete this item?"
-    );
-    if (procced) {
-      const url = `http://localhost:5000/allorders/${id}`;
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount > 0) {
-            alert("deleted successfully");
-            const remainingProduct = allOrders.filter(
-              (order) => order._id !== id
-            );
-            setAllOrders(remainingProduct);
-          }
+    
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
         });
-    }
+
+        const url = `http://localhost:5000/allorders/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const remainingProduct = allOrders.filter(
+                (order) => order._id !== id
+              );
+              setAllOrders(remainingProduct);
+            }
+          });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+
+
+    
+     
+    
   };
 
   return (

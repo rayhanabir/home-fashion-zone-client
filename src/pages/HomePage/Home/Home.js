@@ -6,12 +6,12 @@ import TopBanner from '../TopBanner/TopBanner';
 
 const Home = () => {
     return (
-        <div>
-           <TopBanner></TopBanner> 
+        <>
+           <TopBanner></TopBanner>        
            <Products></Products>
            <Review></Review>
            <Footer></Footer>
-        </div>
+        </>
     );
 };
 

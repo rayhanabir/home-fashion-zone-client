@@ -9,7 +9,6 @@ import Register from "./pages/Login/Register/Register";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 import Dashboard from "./pages/DashboardPage/Dashboard/Dashboard";
-import Footer from "./pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -45,7 +44,6 @@ function App() {
               <Dashboard></Dashboard>
             </Route>
           </Switch>
-         
         </Router>
       </AuthProvider>
     </>

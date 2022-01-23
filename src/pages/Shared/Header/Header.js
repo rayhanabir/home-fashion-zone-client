@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Link,} from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import logo from "../../../images/hfz-logo.png"
 import './Header.css';
 
 
@@ -16,13 +15,13 @@ const Header = () => {
         <>
          <header>
              <nav>
-                 <div className="nav-container">
-                     <div className="logo">
+                 <div className='nav-container'>
+                 <div className="logo">
                         BEST CAMERA
                      </div>
+                   
                      <ul>
                          <li><Link to='/home'>Home</Link></li>
-                         <li><Link to='/about'>About</Link></li>
                          <li><Link to='/products'>Products</Link></li>
                          <li><Link to='/dashboard'>Dashboard</Link></li>
                      </ul>

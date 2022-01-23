@@ -1,7 +1,9 @@
 import React,{useState} from 'react';
+import { Alert } from 'react-bootstrap';
 import './MakeAdmin.css'
 const MakeAdmin = () => {
     const [email, setEmail] = useState('')
+    const [adminSuccess, setAdminSuccess] = useState(false)
     const handleOnBlur = e =>{
         setEmail(e.target.value)
     }
@@ -16,7 +18,12 @@ const MakeAdmin = () => {
             body:JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if(data.modifiedCount === 1){
+                setAdminSuccess(true)
+            }
+            
+        })
     }
     return (
         <>
@@ -27,6 +34,7 @@ const MakeAdmin = () => {
                     <input type="submit" value="Make Admin" />
                </form>
            </div>
+           {adminSuccess && <Alert className='w-50 m-auto' variant='success'> Made Admin Successfully</Alert>}
         </>
     );
 };

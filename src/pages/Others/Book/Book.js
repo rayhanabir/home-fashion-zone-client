@@ -109,12 +109,14 @@ const Book = () => {
                     name="address"
                     onBlur={handleOnblur}
                     placeholder="Your Address"
+                    required
                   />
                   <input
                     type="number"
                     name="phone"
                     onBlur={handleOnblur}
                     placeholder="Your Phone"
+                    required
                   />
                   <input type="submit" value="Place Order" />
                 </form>

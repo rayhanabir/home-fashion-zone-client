@@ -1,18 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   useRouteMatch,
 } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import Dashboard from "../Dashboard/Dashboard";
-import MyOrder from "../MyOrder/MyOrder";
+
 import "./Sidebaar.css";
 const Sidebar = () => {
   let { url } = useRouteMatch();
-  const { admin } = useAuth();
+  const { admin, logOut } = useAuth();
 
   return (
     <>
@@ -47,7 +43,7 @@ const Sidebar = () => {
             </div>
           )}
           <div className="logout-btn">
-            <button>LogOut</button>
+            <button onClick={logOut}>LogOut</button>
           </div>
         </ul>
       </div>
