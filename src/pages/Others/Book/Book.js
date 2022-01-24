@@ -20,7 +20,7 @@ const Book = () => {
   const { productId } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${productId}`)
+    fetch(`https://aqueous-journey-65504.herokuapp.com/${productId}`)
       .then((res) => res.json())
       .then((data) => setSingleProduct(data));
   }, []);
@@ -47,7 +47,7 @@ const Book = () => {
       quantity: productCount,
     };
 
-    fetch("http://localhost:5000/orders", {
+    fetch("https://aqueous-journey-65504.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

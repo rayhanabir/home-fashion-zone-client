@@ -16,7 +16,7 @@ const AddProduct = () => {
     const handleProductSubmit = e =>{
         e.preventDefault()
         const product = {...productInfo}
-        fetch('http://localhost:5000/addproducts', {
+        fetch('https://aqueous-journey-65504.herokuapp.com/addproducts', {
             method:"POST",
             headers:{
                 "Content-type":"application/json"

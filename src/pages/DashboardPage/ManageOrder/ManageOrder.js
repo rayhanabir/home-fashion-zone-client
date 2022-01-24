@@ -8,7 +8,7 @@ import swal from "sweetalert";
 const ManageOrder = () => {
   const [allOrders, setAllOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allorders")
+    fetch("https://aqueous-journey-65504.herokuapp.com/allorders")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, []);
@@ -28,7 +28,7 @@ const ManageOrder = () => {
           icon: "success",
         });
 
-        const url = `http://localhost:5000/allorders/${id}`;
+        const url = `https://aqueous-journey-65504.herokuapp.com/allorders/${id}`;
         fetch(url, {
           method: "DELETE",
         })

@@ -8,7 +8,7 @@ const Products = () => {
     const [homeProducts, setHomeProducts] = useState([]);
     const history = useHistory()
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://aqueous-journey-65504.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setHomeProducts(data));
     },[])

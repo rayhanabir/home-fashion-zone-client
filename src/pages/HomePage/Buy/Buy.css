@@ -1,0 +1,48 @@
+.buy-section{
+    background-color: mediumpurple;
+}
+.buy-container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+}
+.buy-content-box{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+
+}
+
+.buy-content h2{
+    color: white;
+    margin: 20px 0;
+}
+.buy-content-box .box{
+    
+    width: auto;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border-radius: 7px;
+    padding:10px;
+}
+.buy-content-box .box button{
+    background-color: salmon;
+    color: white;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1em;
+    outline: none;
+}
+.buy-content-box .box button:hover{
+    background-color: violet;
+    color:black;
+}
+@media screen and (max-width:768px) {
+    .buy-content-box {
+        display: flex;
+        flex-direction: column;
+    }
+}
