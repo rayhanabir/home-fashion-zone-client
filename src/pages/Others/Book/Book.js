@@ -19,6 +19,7 @@ const Book = () => {
   const [orderSuccess, setOrderSuccess] = useState(false);
   const { productId } = useParams();
 
+  //data load by id in db
   useEffect(() => {
     fetch(`https://aqueous-journey-65504.herokuapp.com/${productId}`)
       .then((res) => res.json())
