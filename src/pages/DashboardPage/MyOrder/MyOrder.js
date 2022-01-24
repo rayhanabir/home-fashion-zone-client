@@ -3,11 +3,10 @@ import swal from "sweetalert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../../hooks/useAuth";
-import { Alert } from "react-bootstrap";
 
 const MyOrder = () => {
   const [myOrders, setMyOrders] = useState([]);
-  const [isDelete, setIsDelete] = useState(false);
+
 
   const { user } = useAuth();
 
@@ -38,7 +37,6 @@ const MyOrder = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
-              setIsDelete(true);
               const remainingOrder = myOrders.filter(
                 (order) => order._id != id
               );
@@ -73,11 +71,6 @@ const MyOrder = () => {
           </div>
         </div>
       ))}
-      {isDelete && (
-        <Alert style={{ width: "50%", margin: "auto" }} variant="success">
-          Deleted Successfully
-        </Alert>
-      )}
     </div>
   );
 };

@@ -21,10 +21,10 @@ const Book = () => {
 
   //data load by id in db
   useEffect(() => {
-    fetch(`https://aqueous-journey-65504.herokuapp.com/${productId}`)
+    fetch(`https://aqueous-journey-65504.herokuapp.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => setSingleProduct(data));
-  }, []);
+  }, [productId]);
   const { name, price, image, description } = singleProduct;
   const handleIncrease = () => setProductCount(productCount + 1);
   const handleDecrease = () =>
